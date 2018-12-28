@@ -17,7 +17,12 @@ import { CoursesService } from './courses.service';
                 </tr>
             </table>
             <!-- Bootstrap Button Demo -->
-            <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'gray' ">Submit</button>
+            <div (click)="onDivClicked()">
+                <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'gray'" (click)="onSaveClick($event)" >Submit</button>
+            </div>
+            <br />
+            <br />
+            <input #name (keyup.enter)="enterClick(name.value)" />
         `
 })
 export class CoursesComponenet{
@@ -41,5 +46,19 @@ export class CoursesComponenet{
 
     getTitle(){
         return this.title;
+    }
+
+    onSaveClick($event){
+        //to stop event bubbling
+        $event.stopPropagation();
+        alert('You Clicked Save');
+    }
+
+    onDivClicked(){
+        alert('Div Was Clicked');
+    }
+
+    enterClick(name){
+        alert(name);
     }
 }
