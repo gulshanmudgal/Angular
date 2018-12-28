@@ -16,6 +16,8 @@ import { CoursesService } from './courses.service';
                     <td [attr.colspan]="colSpan"></td>
                 </tr>
             </table>
+            <!-- Bootstrap Button Demo -->
+            <button class="btn btn-primary" >Submit</button>
         `
 })
 export class CoursesComponenet{
