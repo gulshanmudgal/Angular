@@ -17,13 +17,14 @@ import { CoursesService } from './courses.service';
                 </tr>
             </table>
             <!-- Bootstrap Button Demo -->
-            <button class="btn btn-primary" >Submit</button>
+            <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'gray' ">Submit</button>
         `
 })
 export class CoursesComponenet{
     title = "List of Courses";
     imageUrl = "http://lorempixel.com/400/200";
     colSpan = 2;
+    isActive = true;
     courses;
 
     //This will Work but it should never be used
