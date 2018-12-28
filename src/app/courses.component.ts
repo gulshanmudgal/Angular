@@ -5,13 +5,23 @@ import { CoursesService } from './courses.service';
     selector: 'courses',
     template: `
             <h2>{{ getTitle() }}</h2>
+            <!-- Property Binding -->
+            <img [src]="imageUrl" />
             <ul>
                 <li *ngFor="let course of courses">{{ course }}</li>
             </ul>
+            <table>
+                <tr>
+                    <!-- Attribute Binding -->
+                    <td [attr.colspan]="colSpan"></td>
+                </tr>
+            </table>
         `
 })
 export class CoursesComponenet{
     title = "List of Courses";
+    imageUrl = "http://lorempixel.com/400/200";
+    colSpan = 2;
     courses;
 
     //This will Work but it should never be used
